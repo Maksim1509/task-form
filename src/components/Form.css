@@ -1,0 +1,9 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 760px;
+  height: 1200px;
+  padding: 96px 98px 92px;
+  background: #ffffff;
+}
