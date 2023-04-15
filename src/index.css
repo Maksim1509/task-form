@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Noto Sans';
+  src: local(Noto Sans),
+    url('./assets/fonts/NotoSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 #root {
   background-color: rgba(121, 92, 250, 0.2);
   display: flex;
@@ -7,6 +15,7 @@
 }
 
 body {
+  font-family: 'Noto Sans', sans-serif;
   margin: 0;
   display: flex;
   place-items: center;
