@@ -21,15 +21,17 @@ const Form = () => {
     register,
     handleSubmit,
     reset,
-    getValues,
-    formState: { errors, isSubmitSuccessful },
+    watch,
+    formState: { errors },
   } = useForm<FormData>({
     defaultValues: {
       radioSelection: 'radioSelection2',
       toggle: false,
     },
-    mode: 'onSubmit',
+    mode: 'onChange',
   });
+
+  const watchToogle = watch('toggle');
 
   const onSubmit: SubmitHandler<FormData> = (data) => {
     alert(JSON.stringify(data));
@@ -38,7 +40,6 @@ const Form = () => {
     e.preventDefault();
     reset();
   };
-  console.log(getValues('toggle'));
   return (
     <form className="form" onSubmit={handleSubmit(onSubmit)}>
       <div
@@ -116,7 +117,7 @@ const Form = () => {
       </label>
       <div className="form__toggle">
         <input type="checkbox" id="toggle" {...register('toggle')} />
-        <label htmlFor="toggle">on / off</label>
+        <label htmlFor="toggle">{watchToogle ? 'on' : 'off'}</label>
       </div>
       <div className="form__radio">
         <label>
